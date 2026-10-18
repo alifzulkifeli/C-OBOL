@@ -1,0 +1,33 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. DAY11.
+
+       ENVIRONMENT DIVISION.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+
+       01 WS-EMPLOYEE-TABLE.
+           05 WS-EMPLOYEE OCCURS 20 TIMES.
+               10 WS-EMP-ID     PIC 99.
+               10 WS-EMP-NAME   PIC X(20).
+               10 WS-EMP-SALARY PIC 9(5).
+       01 WS-TOTAL-SALARY PIC 9(8) VALUE ZERO.
+       01 WS-COUNT PIC 99.
+
+       PROCEDURE DIVISION.
+           PERFORM VARYING WS-COUNT FROM 1 BY 1 UNTIL WS-COUNT > 20
+               MOVE WS-COUNT TO WS-EMP-ID(WS-COUNT)
+               MOVE WS-COUNT TO WS-EMP-NAME(WS-COUNT)
+               COMPUTE WS-EMP-SALARY(WS-COUNT) = 
+                   WS-COUNT * 100 + 5000
+
+               DISPLAY "Employee : " WS-EMP-ID(WS-COUNT)
+               DISPLAY "Name     : EMPLOYEE-" WS-EMP-NAME(WS-COUNT)
+               DISPLAY "Salary   : " WS-EMP-SALARY(WS-COUNT)
+               DISPLAY " "
+               ADD WS-EMP-SALARY(WS-COUNT) TO WS-TOTAL-SALARY
+           
+           END-PERFORM.
+           DISPLAY "TOTAL SALARY: " WS-TOTAL-SALARY
+           STOP RUN.
+

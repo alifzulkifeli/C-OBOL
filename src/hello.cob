@@ -1,0 +1,14 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. HELLO.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01 WS-NAME PIC X(30).
+
+       PROCEDURE DIVISION.
+           DISPLAY "ENTER YOUR NAME: "
+           ACCEPT WS-NAME
+
+           DISPLAY "HELLO " WS-NAME
+
+           STOP RUN.

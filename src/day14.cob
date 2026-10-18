@@ -1,0 +1,26 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. DAY14.
+
+       ENVIRONMENT DIVISION.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+
+       COPY employee.
+
+       PROCEDURE DIVISION.
+
+           MOVE 10001 TO EMP-ID
+           MOVE "ALIFF" TO EMP-FIRST
+           MOVE "AIMAN" TO EMP-LAST
+           MOVE "IT" TO EMP-DEPARTMENT
+           MOVE "20200315" TO EMP-JOIN-DATE
+           MOVE 6500.50 TO EMP-SALARY
+
+           DISPLAY "ID         : " EMP-ID
+           DISPLAY "FULL NAME  : " EMP-FULLNAME
+           DISPLAY "DEPT       : " EMP-DEPARTMENT
+           DISPLAY "JOIN DATE  : " EMP-DAY "/" EMP-MONTH "/" EMP-YEAR
+           DISPLAY "SALARY     : " EMP-SALARY
+
+           STOP RUN.
